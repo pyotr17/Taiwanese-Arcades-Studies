@@ -1,4 +1,5 @@
 # 台灣街屋形式分期
+https://pyotr17.github.io/Taiwanese-Arcades-Studies/  </br>
 分類是為了理解，不過也會陷入無法分類的窘境。
 </br></br>
 整理了台灣日治時期街屋/騎樓的研究中，對於建築型式的不同分期。資料來自以下研究： </br>
