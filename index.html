@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
 <html>
 <head>
-  <title>台灣騎樓研究 | Digital History</title>
+  <title>台灣騎樓建築研究 Taiwanese Arcades Studies</title>
   <meta charset="utf-8">
+  <meta name="description" content="整理台灣騎樓建築的型式分期，大致皆依日治前、中、後期分為不同類型。
+				    也列出了當時的相關法令，及世界建築潮流供比較參考。"/>
   <style>
     body, html {
       font-family: arial, sans-serif;
@@ -32,15 +33,15 @@
     .vis-item.motorcycle { background-color: #FA8072; }
     .vis-item.touringcar { background-color: #B4EEB4; }
     .vis-item.endurance  { background-color: #FFFFCC; }
-	.vis-item.hong       { background-color: #c65353; }
-    .vis-item.chi 		 { background-color: #6f2a2a; }
-    .vis-item.huang 	 { background-color: #e8b37d; }
-    .vis-item.lu  		 { background-color: #9fc6b1; }
+    .vis-item.hong       { background-color: #D97763; }
+    .vis-item.chi        { background-color: #B74630; }
+    .vis-item.huang 	 { background-color: #F6D8AE; }
+    .vis-item.lu         { background-color: #E7F1CC; }
 	
-	.vis-item.vis-background.ming { background-color: #e6ffb3 }
-	.vis-item.vis-background.qing { background-color: #ffe6b3 }
-	.vis-item.vis-background.jp   { background-color: #ffb3b3 }
-	.vis-item.vis-background.kmt  { background-color: #ccffff }
+    .vis-item.vis-background.ming { background-color: #e6ffb3 }
+    .vis-item.vis-background.qing { background-color: #ffe6b3 }
+    .vis-item.vis-background.jp   { background-color: #ffb3b3 }
+    .vis-item.vis-background.kmt  { background-color: #ccffff }
   </style>
 </head>
 
@@ -63,9 +64,7 @@
 	{"content": "林淑貞《日據時期街屋立面形式之演變》1997", "id": 9, className:'openwheel'},
 	{"content": "堀込憲二《日治時期台灣近代建築外牆磁磚形式與色彩變遷之研究》2011", "id": 10, className:'openwheel'},
   ]);
-  
-  // create a dataset with items
-  // note that months are zero-based in the JavaScript Date object, so month 3 is April
+ 
   var items = new vis.DataSet([
 	{start: new Date(1895, 0, 1), end: new Date(1906, 11, 31), group:1, className:"", content:"試驗期"},
 	{start: new Date(1907, 0, 1), end: new Date(1915, 11, 31), group:1, className:"", content:"磚造全盛時期"},
@@ -113,23 +112,17 @@
 	{start: new Date(1933, 0, 1), end: new Date(1945, 11, 31), group:10, className:"lu", content:"黃綠色(青綠色)系磁磚"},	
 	])
 
-  // create visualization
   var container = document.getElementById('visualization');
   var options = {
-    // option groupOrder can be a property name or a sort function
-    // the sort function must compare two groups and return a value
-    //     > 0 when a > b
-    //     < 0 when a < b
-    //       0 when a == b
     groupOrder: function (a, b) {
-      return a.value - b.value;
+        return a.value - b.value;
     },
     groupOrderSwap: function (a, b, groups) {
     	var v = a.value;
     	a.value = b.value;
     	b.value = v;
     },
-	stack: false,
+    stack: false,
     orientation: 'both',
     editable: false,
     groupEditable: true,
@@ -189,7 +182,7 @@
 	{start: new Date(1945, 0, 1), group:3, className:"", content:"戰後現代主義建築"},
 	{start: new Date(1953, 0, 1), group:3, className:"", content:"後現代主義建築"},
 	
-	{id: 'A', content: '明鄭時期', start: '1663-01-31', end: '1682-12-31', type: 'background', group: 2, className:'ming'},
+    {id: 'A', content: '明鄭時期', start: '1663-01-31', end: '1682-12-31', type: 'background', group: 2, className:'ming'},
     {id: 'B', content: '清領時期', start: '1683-01-31', end: '1894-12-31', type: 'background', group: 2, className:'qing'},
     {id: 'C', content: '日治時期', start: '1895-01-01', end: '1945-12-31', type: 'background', group: 2, className:'jp'},
     {id: 'D', content: '光復後', start: '1946-01-01', end: 'none', type: 'background', group: 2, className:'kmt'},
